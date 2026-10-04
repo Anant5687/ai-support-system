@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 from app.db.database import create_db
 from app.routers.users_router import router as users_router
+from app.routers.organisation_routers import router as organisation_routers
 
 app = FastAPI()
 
 create_db()
+
 
 @app.get("/health-check")
 def health_check():
@@ -12,3 +14,4 @@ def health_check():
 
 
 app.include_router(users_router)
+app.include_router(organisation_routers)
