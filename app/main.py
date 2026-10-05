@@ -9,7 +9,6 @@ app = FastAPI()
 
 create_db()
 
-
 @app.get("/health-check")
 def health_check():
     return {"status": 200, "message": "Service is fine"}
